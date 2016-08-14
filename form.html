@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="postApp">
+<head>
+<title>Post Form</title>
+  <meta charset="utf-8">
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+    padding-top: 20px
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+</style>
+</head>
+<body ng-controller="formCtrl">
+<header>
+  <h1>Windsor Shores</h1>
+</header>
+<div class="container">
+  <form ng-submit="submit()">
+    <div class="form-group row">
+      <div class="col-sm-offset-1 col-sm-6">
+        <input type="text" class="form-control" id="title" placeholder="Ad title" required ng-model="post.title">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-offset-1 col-sm-2">
+        <select class="form-control" id="sel1" ng-model="post.category" required>
+        <option value="" selected hidden>Category</option>
+        <option>Household Items</option>
+        <option>Kitchen</option>
+        <option>Car</option>
+      </select>
+      </div>
+      <div class="col-sm-2">
+        <input type="number" min="0" class="form-control" id="price" placeholder="price:" ng-model="post.price">
+      </div>
+      <div class="col-sm-2">
+        <input type="text" name="condition" class="form-control" placeholder="condition of Item" ng-model="post.condition">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-offset-1 col-sm-6">
+        <!-- <label for="comment">Comment:</label> -->
+        <textarea class="form-control" rows="5" id="comment" placeholder="Ad Description" ng-model="post.details"></textarea>
+      </div>
+    </div>
+    <div class="form-group row" >
+      <div class="col-sm-offset-1 col-sm-2">
+        <input type="text" name="firstName" class="form-control" placeholder="Name" required="true" ng-model="post.name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-offset-1 col-sm-2">
+        <input type="text" name="address" class="form-control" placeholder="address" required="true" ng-model="post.address">
+      </div>
+      <div class="col-sm-2">
+        <input type="email" name="email" class="form-control" placeholder="email id: Optional" ng-model="post.email">
+      </div>
+      <div class="col-sm-2">
+        <input type="text" name="contact Number" class="form-control" placeholder="Contact Number: Optional" ng-model="post.contactNumber">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-offset-1 col-sm-1">
+        <button type="submit" class="btn btn-primary">Post It</button>
+      </div>
+    </div>
+  </form> 
+
+  <input type = "file" file-model = "myFile"/>
+  <button ng-click = "uploadFile()">upload me</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js></script>
+<script src ="controller/formController.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- jQuery library -->
+
+<script src="angular(.min).js"></script>
+<script src="ng-file-upload-shim(.min).js"></script> <!-- for no html5 browsers support -->
+<script src="ng-file-upload(.min).js"></script>
+</body>
+</html>
